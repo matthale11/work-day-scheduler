@@ -98,14 +98,33 @@ if(currentHour > fivePm) {
     $("#5pm").addClass("future");
 }
 
-// Add function to render existing appointments from local storage
-// function renderAppointments () {
-//     var nineAmText = localStorage.getItem("9am");
-//     if (!nineAmText) {
-//         return;
-//     }
+// Create function to render existing appointments from local storage
+function renderAppointments () {
+    var nineAmText = localStorage.getItem("9am");
+    var tenAmText = localStorage.getItem("10am");
+    var elevenAmText = localStorage.getItem("11am");
+    var noonText = localStorage.getItem("noon");
+    var onePmText = localStorage.getItem("1pm");
+    var twoPmText = localStorage.getItem("2pm");
+    var threePmText = localStorage.getItem("3pm");
+    var fourPmText = localStorage.getItem("4pm");
+    var fivePmText = localStorage.getItem("5pm");
+    if (!nineAmText || !tenAmText || !elevenAmText || !noonText || !onePmText || !twoPmText || !threePmText || !fourPmText || !fivePmText) {
+        return;
+    } 
+    $("#9am-text").val(nineAmText);
+    $("#10am-text").val(tenAmText);
+    $("#11am-text").val(elevenAmText);
+    $("#noon-text").val(noonText);
+    $("#1pm-text").val(onePmText);
+    $("#2pm-text").val(twoPmText);
+    $("#3pm-text").val(threePmText);
+    $("#4pm-text").val(fourPmText);
+    $("#5pm-text").val(fivePmText);
+}
 
-// }
+// Call the function to render appointments from local storage
+renderAppointments();
 
 // Add event listeners: When clicking the save button, we save the cell contents to local storage
 nineAmSave.click(function(event) {
