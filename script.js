@@ -109,9 +109,7 @@ function renderAppointments () {
     var threePmText = localStorage.getItem("3pm");
     var fourPmText = localStorage.getItem("4pm");
     var fivePmText = localStorage.getItem("5pm");
-    if (!nineAmText || !tenAmText || !elevenAmText || !noonText || !onePmText || !twoPmText || !threePmText || !fourPmText || !fivePmText) {
-        return;
-    } 
+    // Render in text area using Query
     $("#9am-text").val(nineAmText);
     $("#10am-text").val(tenAmText);
     $("#11am-text").val(elevenAmText);
